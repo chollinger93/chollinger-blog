@@ -1,0 +1,52 @@
+name: nginx
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        
+      - name: Update theme
+        # Update themes
+        run: git submodule update --init --recursive
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.70.0"
+
+      - name: Build
+        run: hugo --minify -d blog
+                
+      - name: List status
+        working-directory: ${{ github.workspace }}
+        run: ls -larth blog
+        continue-on-error: true
+        
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.KEY }}
+          name: id_rsa # optional
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+        
+      - name: sshpass
+        run: sudo apt-get install -y sshpass 
+        
+      - name: Deploy
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
+          USERNAME: ${{ secrets.USERNAME }}
+          HOST: ${{ secrets.HOST }}
+          TARGET_DIR: ${{ secrets.TARGET_DIR }}
+        run: sshpass -p "$PASSWORD" scp -r blog/ "$USERNAME"@"$HOST":"$TARGET_DIR"
+
