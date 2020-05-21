@@ -13,3 +13,4 @@ $RECYCLE.BIN/
 
 # Export
 /export/*
+sbin/wordpress.xml

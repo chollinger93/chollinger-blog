@@ -2,8 +2,12 @@
 title = "About"
 +++
 
-Welcome to my not-at-all generic blog. I write about nerdy stuff here, most likely Big Data, Cloud, Analytics, and UNIX-related.
-I'm a Senior Consultant for all your data-related needs and know stuff about Google Cloud, Hadoop, Apache Storm, Heron, HBase, Kafka, Spark (...) and absolutely nothing about Kerberos.
+This is my blog. I write about what I carefully describe as "Software Engineering", mostly around "Big" Data with Hadoop and various Cloud Providers, but pretty much everything that strikes my fancy. 
+
+I am passionate about Open Source Software, will lecture people about GNU/Linux (I have this long-standing theory that this is the reason why I'm not invited to many parties anymore), and despise what I call "Meme Technology" (until I decide otherwise).
+
+![](https://imgs.xkcd.com/comics/x.png)
+(https://xkcd.com/2309/)
 
 ## Links:
 [Github](https://github.com/otter-in-a-suit)

@@ -5,6 +5,9 @@ theme = "hugo-ink"
 
 copyright = "© Christian Hollinger"
 
+[permalinks]
+  posts = "/:year/:month/:title"
+
 [params]
   subtitle = "Software Engineering, GNU/Linux, Data, ML, and other things"
   # Optional 64x64 avatar image.
