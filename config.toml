@@ -38,6 +38,9 @@ copyright = "© Christian Hollinger"
     "10 Reasons why gcc SHOULD be re-written in JavaScript - You won't believe #8!"
     ]
 
+  # Github base url
+  github = "https://github.com/otter-in-a-suit/chollinger-blog"
+
 # Nav.
 [[menu.main]]
 name = "Home"
@@ -73,13 +76,13 @@ url = "/index.xml"
     guessSyntax = false
     hl_Lines = ""
     lineNoStart = 1
-    lineNos = false
+    lineNos = true
     lineNumbersInTable = true
     noClasses = true
-    style = "monokai"
+    style = "paraiso-dark"
     tabWidth = 4
 
   [markup.tableOfContents]
     endLevel = 3
-    ordered = false
+    ordered = true
     startLevel = 2

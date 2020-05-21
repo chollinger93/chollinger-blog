@@ -1,17 +1,14 @@
 ---
 title: "Goodbye, WordPress - Hello, Hugo & nginx"
-date: 2020-05-14T08:47:11+01:00
+date: 2020-05-21
 description: "Ditching WordPress for a static site generator"
 tags: ["linux", "web", "hugo", "html", "css", "go", "ci/cd", "github actions", "javascript"]
-draft: true
 ---
 
 ## Introduction 
-For the past 4 or so years, I've been using WordPress to push content to this blog. I originally chose it because my knowledge of anything to do with Web and Mobile Development is spotty at best - and because "back in the day(tm)", it was the only CMS I was somewhat familiar with.
+For the past 4 or so years, I've been using WordPress to push content to this blog. I originally chose it because my knowledge of anything to do with Web and Mobile Development is spotty at best - and because "back in the day"™, it was the only CMS I was somewhat familiar with.
 
 Maybe you've seen the sluggish mess that the blog is - and today, we'll change it.
-
-<img>
 
 ## Pain Points
 The issues I've had with WordPress were numerous, but to name a few:
@@ -29,11 +26,11 @@ The issues I've had with WordPress were numerous, but to name a few:
 - 2.5MB transfer and 47 requests / network activity *per page load*
 - Up to 40s (!) loading times on slow connections
 
-While I'm sure somebody who is super familiar with WordPress can figure some of those out, but one thing that comes to mind is this:
-
-> IMG
+While I'm sure somebody who is super familiar with WordPress can figure some of those out, but one thing that comes to mind is [this horrifying contraption](https://aws.amazon.com/blogs/architecture/wordpress-best-practices-on-aws/) for running Wordpress.
 
 > For comparison: My actual website, which is plain `HTML` and `CSS`, loads 32KB (most of which is the little Tux `favicon`) and hence in under 0.3s on a similarly horrible connection.
+
+![Old Blog](images/old.png)
 
 ## Workflow 
 My **workflow**, however, was the **real** pain point (I accept judgment for this):
