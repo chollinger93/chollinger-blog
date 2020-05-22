@@ -28,7 +28,7 @@ func compareUrls(local, remote map[string]string) bool {
 	allFound := true
 	for k, _ := range remote {
 		fmt.Println(k)
-		if title, ok := remote[k]; ok {
+		if title, ok := local[k]; ok {
 			fmt.Printf("Found %s\n", title)
 		} else {
 			fmt.Printf("Could not find %s locally, url: %s\n", title, k)

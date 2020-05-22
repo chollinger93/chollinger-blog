@@ -274,7 +274,7 @@ func readFeed(path string) *gofeed.Feed {
 
 func compareUrls(local, remote map[string]string) bool {
 	allFound := true
-	for k, _ := range remote {
+	for k, _ := range local {
 		fmt.Println(k)
 		if title, ok := remote[k]; ok {
 			fmt.Printf("Found %s\n", title)
@@ -300,7 +300,15 @@ func main() {
 }
 {{< / highlight >}}
 
-Which returns `true`.
+Which did find some errors.
+
+{{< highlight bash "linenos=table" >}}
+christian @ pop-os ➜  sbin git:(master) ✗  go run check_rss.go | grep "Could not"
+Could not find  locally, url: https://chollinger.com/blog/2020/02/how-a-broken-memory-module-hid-in-plain-sight-and-how-i-blamed-the-linux-kernel-and-two-innocent-hard-drives/
+Could not find  locally, url: https://chollinger.com/blog/2019/12/tensorflow-on-edge-building-a-smar-security-camera-with-a-raspberry-pi/
+{{< / highlight >}}
+
+Which I was able to fix after deploying the first version of this article. *Psst, don't check the Git commits. :)*
 
 There were more adjustments that needed to be done - like re-adding videos - but for the most part, everything was working fine. I will spare you the tedious details.
 
