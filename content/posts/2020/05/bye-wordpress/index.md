@@ -119,7 +119,7 @@ My personal decision criteria for a theme were the following:
 - Simplistic interface, without omitting information
 - Fast load times even on slow connections
 
-I chose [hugo-ink](https://github.com/knadh/hugo-ink) by `knadh`, but customized it quite heavily to match some of my requirements.
+I chose [hugo-ink](https://github.com/knadh/hugo-ink) by `knadh`, but customized it quite heavily to match some of my requirements. This resulted in a fork called [ink-free](https://github.com/otter-in-a-suit/ink-free).
 
 Adjustments can be easily made using fairly standard HTML (w/ Hugo's injections) and CSS, which I found easy to figure out, despite being anything but a Web Dev. :)
 
