@@ -1,7 +1,7 @@
 baseURL = "https://chollinger.com/blog/"
 languageCode = "en-us"
 title = "Christian Hollinger"
-theme = "hugo-ink"
+theme = "ink-free"
 
 copyright = "© Christian Hollinger"
 
