@@ -57,7 +57,7 @@ The main decision criteria here should be: Is it worth spending the extra effort
 
 In our case - yes, it is. So, time to train our own model, without having to deal with Tensorflow, massive coding efforts, or a Masters in Statistics.
 
-# Getting data & classifying images
+## Getting data & classifying images
 
 As we are trying to extend the idea of image recognition, we first need a set of images to get started on. For that, we will use /r/bmw where people show off their BMWs, mostly E30 and F80 M3s (keep at it folks, I cannot get enough of them). What could go wrong with user-generated content for training sets?
 

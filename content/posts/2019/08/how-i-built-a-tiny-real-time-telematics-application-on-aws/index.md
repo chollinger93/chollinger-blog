@@ -170,7 +170,7 @@ gpsd can collect the following data:
 
 And for the sake of simplicity, we will focus on latitude, longitude, altitude, speed, and time.
 
-# Step 2: AWS IoT Core & Greengrass
+## Step 2: AWS IoT Core & Greengrass
 
 The AWS IoT core will deploy a **Lambda** function to your device. This function will run locally, collect the GPS data, and sends it back to AWS via MQTT. It will also handle caching in case an internet connection is not available.
 
@@ -550,7 +550,7 @@ While relying on a headless box is certainly possible (and more realistic for da
 
 Data collection on Atlanta roads
 
-# Step 4: Analyze & Visualize the Data
+## Step 4: Analyze & Visualize the Data
 
 Once we collected some data, we can head over to AWS Athena to attach a SQL interface to our JSON files on S3. 
 **Athena** is using the **Apache Hive** dialect, but does offer several helpers to make our lives easier. We’ll start by creating a database and mapping a table to our S3 output:

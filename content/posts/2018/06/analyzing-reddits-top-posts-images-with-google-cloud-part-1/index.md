@@ -291,7 +291,7 @@ Similar to Apache Spark, Beam can use the same code for streaming and batch data
 
 For more details, I will refer you to the [official Apache Beam documentation](https://beam.apache.org/get-started/wordcount-example/).
 
-# The Data Flow Pipeline
+## The Data Flow Pipeline
 
 ![Data Flow Pipeline](images/image5-1024x623.png) Data Flow Pipeline
 
