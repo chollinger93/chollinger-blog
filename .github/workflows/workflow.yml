@@ -17,7 +17,7 @@ jobs:
         
       - name: Update theme
         # Update themes
-        run: git submodule update --init --recursive
+        run: git submodule update --init --recursive && git submodule update --remote
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
