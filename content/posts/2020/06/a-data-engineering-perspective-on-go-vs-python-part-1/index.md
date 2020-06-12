@@ -1,6 +1,6 @@
 ---
 title: "A Data Engineering Perspective on Go vs. Python (Part 1)"
-date: 2020-05-21
+date: 2020-06-11
 description: "Exploring golang - can we ditch Python for go? And have we finally found a use case for go? Part 1 explores high-level differences between Python and go and gives specific examples on the two languages, aiming to answer the question based on Apache Beam and Google Dataflow as a real-world example."
 tags: ["go", "golang", "python", "dataflow", "beam", "spark", "big data", "programming"]
 ---
