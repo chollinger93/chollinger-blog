@@ -65,7 +65,7 @@ url = "https://github.com/otter-in-a-suit"
 [[params.social]]
 name = "RSS"
 icon = "rss"
-url = "/index.xml"
+url = "index.xml"
 
 [taxonomies]
    tag = "tags"
