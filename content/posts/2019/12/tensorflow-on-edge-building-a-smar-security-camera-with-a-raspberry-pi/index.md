@@ -62,7 +62,7 @@ Side-note: As I’m using the Tensorflow 2.0 beta, I had to hack the API for tf.
 
 Clone the notebook, follow the instructions to set up a virtual environment, and install all dependencies. 
 
-## Testing** **Tensorflow** **locally
+## Testing Tensorflow locally
 
 Once that is done, we do probably want to loop a local video with test data without having to actually connect a live camera just yet. 
 
@@ -117,7 +117,7 @@ server = NetGear(address='192.168.1.xxx, port='5454', protocol='tcp',pattern=0, 
 
 Now, we can start the sender.py on the server, receiver.py on the client, and there we go: Video over the network. Neat! 
 
-## Integrating** **Tensorflow
+## Integrating Tensorflow
 
 The integration of tensorflow is trivial at this point: As we’ve already established how to do the following: 
 
