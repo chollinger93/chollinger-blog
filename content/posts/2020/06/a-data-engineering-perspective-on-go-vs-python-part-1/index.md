@@ -23,7 +23,7 @@ The next section will poorly attempt to give a "short" (~3,000 word) introductio
 
 > This is Part 1 of 2, focussing on the two languages and the current state of the Apache Beam SDK. In part 2 (coming soon), we'll explore how to use the `Beam` `go` SDK, what limitations we'll face on GCP, and where the journey for `go` for data engineers is headed. 
 
-*All example code is available on [GitHub](https://github.com/otter-in-a-suit/chollinger-blog/tree/master/content/posts/2020/06/a-data-engineering-perspective-on-go-vs-python-part-1/code)*
+*All example code is available on [GitHub](https://github.com/chollinger93/chollinger-blog/tree/master/content/posts/2020/06/a-data-engineering-perspective-on-go-vs-python-part-1/code)*
 
 ## Go vs. Python
 In case you are not familiar, let me quote Wikipedia:
@@ -278,7 +278,7 @@ class PluginInterceptor:
                 __allowed_plugins__[cls.name] = cls
         return __allowed_plugins__
 {{< / highlight >}}
-https://github.com/otter-in-a-suit/scarecrow/blob/master/plugin_base/interceptor.py#L5
+https://github.com/chollinger93/scarecrow/blob/master/plugin_base/interceptor.py#L5
 
 You will also find an example of a struct used in the Mandelbrot example below.
 

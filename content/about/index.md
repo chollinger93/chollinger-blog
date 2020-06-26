@@ -10,7 +10,7 @@ I am passionate about Open Source Software, will lecture people about GNU/Linux 
 (https://xkcd.com/2309/)
 
 ## Links:
-[Github](https://github.com/otter-in-a-suit)
+[Github](https://github.com/chollinger93)
 
 [LinkedIn](https://www.linkedin.com/in/christian-hollinger-697523b6/)
 

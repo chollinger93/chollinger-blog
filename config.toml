@@ -39,7 +39,7 @@ copyright = "© Christian Hollinger"
     ]
 
   # Github base url
-  github = "https://github.com/otter-in-a-suit/chollinger-blog"
+  github = "https://github.com/chollinger93/chollinger-blog"
 
 # Nav.
 [[menu.main]]
@@ -60,7 +60,7 @@ weight = 4
 [[params.social]]
 name = "Github"
 icon = "github"
-url = "https://github.com/otter-in-a-suit"
+url = "https://github.com/chollinger93"
 
 [[params.social]]
 name = "RSS"

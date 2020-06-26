@@ -54,7 +54,7 @@ create 'action', 'cf', {NUMREGIONS => 15, SPLITALGO => 'HexStringSplit'}
 
 Bam, good to go! The table's empty - but we'll get to that in a second.
 
-In order to do anything with our view, we need data. I've written a small Spark app that you can get [here](https://github.com/otter-in-a-suit/sparkdatagenerator) and run as such:
+In order to do anything with our view, we need data. I've written a small Spark app that you can get [here](https://github.com/chollinger93/sparkdatagenerator) and run as such:
 
 {{< highlight bash "linenos=table" >}}
 git clone ...

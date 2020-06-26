@@ -19,7 +19,7 @@ We aim to answer the following questions:
 
 This will be the first part of multiple; we will be focussing on the data processing pipeline and run some exemplary analysis on certain image-based subreddits using the **Cloud Vision API**.
 
-The source code for this is [available on GitHub](https://github.com/otter-in-a-suit/reddit-ml-analysis) under the GNU General Public License v3.0.
+The source code for this is [available on GitHub](https://github.com/chollinger93/reddit-ml-analysis) under the GNU General Public License v3.0.
 
 ## What is Reddit?
 

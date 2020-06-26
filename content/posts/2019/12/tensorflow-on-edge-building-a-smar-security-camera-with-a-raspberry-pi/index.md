@@ -12,7 +12,7 @@ The amount of time my outdoor cameras are being set off by light, wind, cars, or
 
 I needed a solution for this problem, without going completely overboard. Something simple, elegant, yet effective. 
 
-Folks, meet what I lovingly call “**[Scarecrow-Cam](https://github.com/otter-in-a-suit/scarecrow)**”. A **Raspberry Pi** powered camera that detects people with **Tensorflow Object Detection** and greets them with exceptionally loud and harsh music (or a warning sound) the second they step onto my porch. 
+Folks, meet what I lovingly call “**[Scarecrow-Cam](https://github.com/chollinger93/scarecrow)**”. A **Raspberry Pi** powered camera that detects people with **Tensorflow Object Detection** and greets them with exceptionally loud and harsh music (or a warning sound) the second they step onto my porch. 
 
 Using real-time object detection with Tensorflow, a Raspberry Pi, a camera, a speaker, and Wifi, this ensures quiet evenings. Somewhat. 
 
@@ -68,7 +68,7 @@ Once that is done, we do probably want to loop a local video with test data with
 
 All we really need to do here is to change the “while True” loop to bind to the OpenCV session. VideoCapture conveniently accepts either an integer (for a webcam) or a path to a video file. 
 
-{{< gist otter-in-a-suit 8dcc79ab16daf5fcdda3df1a4ccc183a >}}
+{{< gist chollinger93 8dcc79ab16daf5fcdda3df1a4ccc183a >}}
 
 ![](images/image-1.png)
 
@@ -90,15 +90,15 @@ What you’ll need: 
 
 Here’s a sample writeup on how I’ve set up my Pi: 
 
-{{< gist otter-in-a-suit fad632d53238d92062a5197c75fbcb8f >}}
+{{< gist chollinger93 fad632d53238d92062a5197c75fbcb8f >}}
 
 Next, we’ll have to take the development branch of VidGear, as a certain bugfix is not on the master at the time of writing. 
 
-{{< gist otter-in-a-suit 01b634921fa97f8f84bcdb1274693631 >}}
+{{< gist chollinger93 01b634921fa97f8f84bcdb1274693631 >}}
 
 Now, we can test streaming video locally: 
 
-{{< gist otter-in-a-suit 54b4678afd32188963898a90027f651c >}}
+{{< gist chollinger93 54b4678afd32188963898a90027f651c >}}
 
 You should see the video playing back. You will notice some use of the multiprocessing library – we use this for ensuring the while loop gets terminated after a defined timeout, for development purposes.  
 
@@ -161,9 +161,9 @@ All of this is blocking the respective threads – meaning, as long as the audio
 
 In order to avoid blasting the same message, we can employ a simple sempahore structure. 
 
-{{< gist otter-in-a-suit 2c1ffe8d5a645f1de58627202224f6a9 >}}
+{{< gist chollinger93 2c1ffe8d5a645f1de58627202224f6a9 >}}
 
-{{< gist otter-in-a-suit 2c1ffe8d5a645f1de58627202224f6a9 >}}
+{{< gist chollinger93 2c1ffe8d5a645f1de58627202224f6a9 >}}
 
 ## Testing everything
 
@@ -199,4 +199,4 @@ In any case - I am happy with this little project, as it illustrates how relativ
 
 _All development was done under PopOS! 19.04 on Kernel 5.5.1 with 12 Intel i7-9750H vCores @ 2.6Ghz and 16GB RAM on a 2019 System76 Gazelle Laptop_, _as well as a Raspberry Pi 4 4GB on Raspian 10._
 
-_The full source is available on [GitHub](https://github.com/otter-in-a-suit/scarecrow)._
+_The full source is available on [GitHub](https://github.com/chollinger93/scarecrow)._

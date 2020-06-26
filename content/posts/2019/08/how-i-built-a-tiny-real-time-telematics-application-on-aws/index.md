@@ -677,4 +677,4 @@ So, **conclusion** - once again, this was a completely and utterly pointless, al
 
 _All development was done under PopOS! 19.04 on Kernel 5.0.0 with 12 Intel i7-9750H vCores @ 2.6Ghz and 16GB RAM on a 2019 System76 Gazelle Laptop_
 
-_The full source is available on [GitHub](https://github.com/otter-in-a-suit/TinyTelematics)._
+_The full source is available on [GitHub](https://github.com/chollinger93/TinyTelematics)._

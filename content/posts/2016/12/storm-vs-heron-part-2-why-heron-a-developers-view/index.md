@@ -9,7 +9,7 @@ tags: ["big data", "heron", "spark", "java", "hadoop", "storm"]
 
 _This article is part 2 of an upcoming article series, **Storm vs. Heron**._
 
-In the [last part](https://otter-in-a-suit.com/blog/?p=50) of the series, we looked at how to transform your existing Storm topologies to Twitter’s new distributed streaming- and analytics-framework, Heron. In this part of the series, we will actually see why you would want to do this. This part will see Storm from a developer’s view, whereas the next part will focus on operations & maintenance.
+In the [last part](https://chollinger93.com/blog/?p=50) of the series, we looked at how to transform your existing Storm topologies to Twitter’s new distributed streaming- and analytics-framework, Heron. In this part of the series, we will actually see why you would want to do this. This part will see Storm from a developer’s view, whereas the next part will focus on operations & maintenance.
 
 ## Why Storm leaves stuff to be desired
 
@@ -76,7 +76,7 @@ Naturally, this has an impact on performance as well. Heron claims to be “up t
 
 Well, personally, I don’t fall for marketing that aims to throw big numbers at me – performance in real-life scenarios is limited by hundreds of factors, for instance I/O implementations and limits, network throughput, API limits and so on and so forth.
 
-But still, running my [example topology](https://github.com/otter-in-a-suit/TwitterAnalysis) from Part 1 in single node mode (i.e. locally), without Mesos, with a limited Twitter API and a horrible HDF implementation on a single AWS r3.xlarge (Intel Xeon E5-2670 4 vCores, 30GiB Ram) instance gave me **60% more throughput** – which makes me believe Twitter’s “x14” claim (for WordCount) much more.
+But still, running my [example topology](https://github.com/chollinger93/TwitterAnalysis) from Part 1 in single node mode (i.e. locally), without Mesos, with a limited Twitter API and a horrible HDF implementation on a single AWS r3.xlarge (Intel Xeon E5-2670 4 vCores, 30GiB Ram) instance gave me **60% more throughput** – which makes me believe Twitter’s “x14” claim (for WordCount) much more.
 
 ![stormheronperf](images/StormHeronPerf.png)
 
@@ -114,7 +114,7 @@ All of these mechanisms require you to put quite a lot of thought into your desi
 
 ### Heron
 
-Now, here’s the deal with Heron – while it aims to improve many things “under the hood” compared to Storm (architecture, performance, monitoring, debugging …), it still is fully compatible to Apache Storm (see [Part 1](https://otter-in-a-suit.com/blog/?p=50) of this series). While arguably this is a huge benefit for corporations using Storm right now, it does not actually impact the development model too much – in other words, resilience will be still a topic you have to think about yourself. Now, if I’m the one who missed a killer feature that Heron introduced for this, let me know!
+Now, here’s the deal with Heron – while it aims to improve many things “under the hood” compared to Storm (architecture, performance, monitoring, debugging …), it still is fully compatible to Apache Storm (see [Part 1](https://chollinger93.com/blog/?p=50) of this series). While arguably this is a huge benefit for corporations using Storm right now, it does not actually impact the development model too much – in other words, resilience will be still a topic you have to think about yourself. Now, if I’m the one who missed a killer feature that Heron introduced for this, let me know!
 
 ## Conclusion
 

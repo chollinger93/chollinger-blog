@@ -42,7 +42,7 @@ Heron serves as our Stream processing engine and local ML, Nominatim on Postgres
 
 On Google Cloud, we use the NLP API to enrich data, BigTable and BigQuery for storage and Data Studio for visualization.
 
-BigTable (think HBase) is used for simple, inexpensive mass-inserts, while BigQuery is used for analytics. For the sake of simplicity, I’ll refer to one of [my old articles](https://otter-in-a-suit.com/blog/?p=113) which explains quite a bit about when to use BigTable/Hbase and when not to.
+BigTable (think HBase) is used for simple, inexpensive mass-inserts, while BigQuery is used for analytics. For the sake of simplicity, I’ll refer to one of [my old articles](https://chollinger93.com/blog/?p=113) which explains quite a bit about when to use BigTable/Hbase and when not to.
 
 ## Hybrid Cloud
 

@@ -11,7 +11,7 @@ In the [last iteration of this article](https://chollinger.com/blog/posts/2018/1
 
 In this article, we will be extending the last article’s premise - to analyze picture-based subreddits with Dataflow - by using Google’s AutoML Vision toolset, training a model, and exposing it via REST to recognize new images.
 
-_The source code for this is_ [_available on GitHub_](https://github.com/otter-in-a-suit/reddit-ml-analysis) _under the GNU General Public License v3.0._
+_The source code for this is_ [_available on GitHub_](https://github.com/chollinger93/reddit-ml-analysis) _under the GNU General Public License v3.0._
 
 ## What is Reddit?
 
@@ -23,13 +23,13 @@ Reddit is the [3rd most popular site in the US](https://www.alexa.com/siteinfo/r
 
 ## Technology & Architecture
 
-We will be partly re-using the [architecture of the last article](https://otter-in-a-suit.com/blog/?p=204), with some slight adjustments here and there.
+We will be partly re-using the [architecture of the last article](https://chollinger93.com/blog/?p=204), with some slight adjustments here and there.
 
 \![Architecture](images/image6.png) Architecture\[/caption\]
 
 As we focus on the image recognition part, we upload a training set of images to Cloud Storage (alongside with our manual classifications), train an AutoML model, and access Reddit data via our Desktop using REST.
 
-The latter part can be automated in subsequent steps, e.g. using Dataflow and PubSub (you can find some prep-work on my [GitHub page](https://github.com/otter-in-a-suit/reddit-ml-analysis)).
+The latter part can be automated in subsequent steps, e.g. using Dataflow and PubSub (you can find some prep-work on my [GitHub page](https://github.com/chollinger93/reddit-ml-analysis)).
 
 ### AutoML Vision
 
@@ -77,7 +77,7 @@ import re
  
 from reddit.Main import get_top_posts
  
-__author__ = "Christian Hollinger (otter-in-a-suit)"
+__author__ = "Christian Hollinger (chollinger93)"
 __version__ = "0.1.0"
 __license__ = "GNU GPLv3"
  

@@ -294,4 +294,4 @@ The foundation is there. We can collect, send, format, store and analyze data. A
 
 But for now - a fun little project and maybe a foundation for more.
 
-_The full source is available on [GitHub](https://github.com/otter-in-a-suit/TinyTelematics)._
+_The full source is available on [GitHub](https://github.com/chollinger93/TinyTelematics)._

@@ -119,7 +119,7 @@ My personal decision criteria for a theme were the following:
 - Simplistic interface, without omitting information
 - Fast load times even on slow connections
 
-I chose [hugo-ink](https://github.com/knadh/hugo-ink) by `knadh`, but customized it quite heavily to match some of my requirements. This resulted in a fork called [ink-free](https://github.com/otter-in-a-suit/ink-free).
+I chose [hugo-ink](https://github.com/knadh/hugo-ink) by `knadh`, but customized it quite heavily to match some of my requirements. This resulted in a fork called [ink-free](https://github.com/chollinger93/ink-free).
 
 Adjustments can be easily made using fairly standard HTML (w/ Hugo's injections) and CSS, which I found easy to figure out, despite being anything but a Web Dev. :)
 
@@ -162,7 +162,7 @@ And I am reasonably happy with the result:
 
 ![After adjustments](images/after.png)
 
-Feel free to check out the theme's repository here: [https://github.com/otter-in-a-suit/hugo-ink](Github)
+Feel free to check out the theme's repository here: [https://github.com/chollinger93/hugo-ink](Github)
 
 ### Adjusting exported blog posts
 Due to my rather interesting `WordPress` configuration, the exported posts from above need some help.
@@ -187,13 +187,13 @@ Whereas we are expecting:
 We can fix that by replacing
 
 {{< highlight md >}}
-<script src="https://gist.github.com/otter-in-a-suit/8dcc79ab16daf5fcdda3df1a4ccc183a.js"></script>
+<script src="https://gist.github.com/chollinger93/8dcc79ab16daf5fcdda3df1a4ccc183a.js"></script>
 {{< / highlight >}}
 
 with
 
 {{< highlight md >}}
-{{</* gist otter-in-a-suit 8dcc79ab16daf5fcdda3df1a4ccc183a */>}}
+{{</* gist chollinger93 8dcc79ab16daf5fcdda3df1a4ccc183a */>}}
 {{< / highlight >}}
 
 But, of course, doing that by hand would be tedious, so we can script that:

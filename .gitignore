@@ -1,6 +1,7 @@
 # Hugo default output directory
 /public
 .ipynb_checkpoints/
+.vscode/*
 
 ## OS Files
 # Windows

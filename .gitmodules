@@ -1,4 +1,4 @@
 [submodule "themes/hugo-ink"]
 	path = themes/ink-free
-	url = https://github.com/otter-in-a-suit/ink-free
+	url = https://github.com/chollinger93/ink-free
 	branch = master
