@@ -26,16 +26,18 @@ copyright = "© Christian Hollinger"
     "Running Hadoop on my Thermostat", 
     "How to google Rust and Go Questions and how to skip DIY Blogs",
     "My Potato Salad Recipe on the Cloud",
-    "Serverless, Cloud-Native Cooking Recipies",
+    "Serverless, Cloud-Native Cooking Recipes",
     "Why this Year will be the Year of the Linux Desktop",
     "Haskell: A 70 Page Essay on why it will be the Next Big Thing - this Time for real!",
     "74 Reasons to Downgrade to Windows ME right now",
-    "You Won't Believe these 10 FACTS about Squirrels",
     "My Life as CTO: Why you NEED to force people to use the Dvorak layout",
     "Emoji-Driven Programming: Our Startup tried it (and we succeeded)",
     "How I use AI to generate a Feature Matrix for my new SaaS Startup",
     "My Toaster installed Ransomware on my Fridge - Please Help",
-    "10 Reasons why gcc SHOULD be re-written in JavaScript - You won't believe #8!"
+    "10 Reasons why gcc SHOULD be re-written in JavaScript - You won't believe #8!",
+    "That Pointer isn't unsafe - it's going on an adventure: How to have difficult Engineering Discussions",
+    "i = 0x5f3759df - ( i >> 1 ); // what the f...? - How to write clean Code in C",
+    "Lean Cloud: Running WordPress in only 7,000 lines of Cloud Formation Templates"
     ]
 
   # Github base url
