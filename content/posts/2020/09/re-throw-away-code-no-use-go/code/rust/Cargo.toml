@@ -1,0 +1,10 @@
+[package]
+name = "api-test"
+version = "0.0.1"
+authors = ["Christian Hollinger"]
+edition = "2018"
+
+[dependencies]
+reqwest = { version = "0.10", features = ["blocking", "json"] }
+tokio = { version = "0.2", features = ["full"] }
+rand = "0.7"
