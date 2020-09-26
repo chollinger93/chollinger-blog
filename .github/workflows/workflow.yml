@@ -48,5 +48,5 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           HOST: ${{ secrets.HOST }}
           TARGET_DIR: ${{ secrets.TARGET_DIR }}
-        run: sshpass -p "$PASSWORD" scp -r blog/ "$USERNAME"@"$HOST":"$TARGET_DIR"
+        run: sshpass -p "$PASSWORD" scp -P 1024 -r blog/ "$USERNAME"@"$HOST":"$TARGET_DIR"
 
