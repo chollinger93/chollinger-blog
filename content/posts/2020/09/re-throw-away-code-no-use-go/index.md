@@ -23,6 +23,8 @@ At the same time, I do think the author makes some very compelling points. Yes, 
 
 But you know what? `go` does that too. And is a lot simpler at that. A point of view. And why it doesn't matter.
 
+**Note**: Michal and I exchanged a couple of emails and I've updated some things below.
+
 ## Implementing an Example, three Times
 Let's take a look at some of the author's specific points in favor of `Rust` over other languages and actually pick one of his examples and implement it real quick: *"Single-use debugging tools („I need to throw 10k of these weird requests at the server to see if it triggers the bug. It didn’t? Ok, let’s try something else…“)"*.
 
@@ -261,6 +263,16 @@ And of course, I needed to make the compiler happy.
 Is this a trivial task for somebody who uses `Rust` every day or, at the very least, comes from a `C`/`C++` background? Certainly. Can a lot of this be streamlined and optimized? Of course. But we are looking at simple, one-off programs and scripts (often given to more junior resources to deal with in the first place!) and so one has to ask the question: Is it worth it? 
 
 After all, this is a very simple, standard thing to hack together: Talk to an API. See if you can make it cry. If so, figure out why.
+
+**Update 2020-10-03**: Here's what I should have done in `Rust` to make some of the pain points go away:
+- Use `cargo new` to pre-generate everything
+- Use `&["http://localhost:3000/stocks?symbol=", symbol].concat() ` for String-building
+- Avoid the implicit return (`-> ()`)
+- Use a more idiomatic `for` loop:  `for i in 0..10_000`
+- Re-use the `rewqest` client
+- Build with the `--release` flag
+
+Thanks to Michal for the suggestions.
 
 ### Python
 Let's do it in Python.
