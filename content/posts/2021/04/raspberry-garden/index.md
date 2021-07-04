@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi Gardening: Monitoring a Vegetable Garden using a Raspberry Pi - Part 1"
 date: 2021-04-25
-description: "On how growing vegetables is more complicated how it looks, why bad soldering still works, on moving individual bits around, and what I learned about using technology where one probably does not need technology."
+description: "On how growing vegetables is more complicated than it looks, why bad soldering still works, on moving individual bits around, and what I learned about using technology where one probably does not need technology."
 tags: ["python", "go", "raspberry", "maker", "i2c", "electronics", "spi", "api", "rest", "low level"]
 ---
 
