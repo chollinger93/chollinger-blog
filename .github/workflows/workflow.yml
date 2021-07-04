@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -26,12 +23,7 @@ jobs:
 
       - name: Build
         run: hugo --minify -d blog
-                
-      - name: List status
-        working-directory: ${{ github.workspace }}
-        run: ls -larth blog
-        continue-on-error: true
-        
+                       
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
