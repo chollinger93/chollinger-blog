@@ -47,3 +47,5 @@ Cargo.lock
 # Dependency directories (remove the comment below to include it)
 # vendor/
 *.mp3
+
+.hugo_build.lock
