@@ -49,3 +49,5 @@ Cargo.lock
 *.mp3
 
 .hugo_build.lock
+\.\$*
+.backup
