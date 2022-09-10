@@ -18,7 +18,7 @@ copyright = "© Christian Hollinger"
   # Max tags
   maxTags = 7
   # Define words per minute to approximate reading time
-  wpm = 250
+  wpm = 300
 
   # Stupid footers :)
   footers = [ 
