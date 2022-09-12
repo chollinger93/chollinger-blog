@@ -4,6 +4,8 @@ title = "Christian Hollinger"
 theme = "ink-free"
 
 copyright = "© Christian Hollinger"
+[outputs]
+  home = ["HTML", "RSS"]
 
 [permalinks]
   posts = "/:year/:month/:title"
