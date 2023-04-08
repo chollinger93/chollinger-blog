@@ -9,10 +9,10 @@ on:
       - master
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         
       - name: Update theme
         # Update themes
@@ -21,7 +21,7 @@ jobs:
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.87.0"
+          hugo-version: "0.111.03"
 
       - name: Build
         run: hugo --minify -d blog
