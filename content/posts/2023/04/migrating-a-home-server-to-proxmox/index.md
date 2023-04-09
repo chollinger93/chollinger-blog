@@ -348,7 +348,7 @@ I'll mostly quote myself directly here in a short version:
 >
 > ...
 >
-> ## Details
+> **Details**
 >
 > Once I start copying ~6TB in ~15 `rclone` processes on the host (not in a VM), the system locks up or kernel panics after everywhere between 5 minutes and 5 hours. Only a physical hard reset fixes this. A physical tty session is not responsive.
 >
@@ -358,7 +358,7 @@ I'll mostly quote myself directly here in a short version:
 >
 > [...]
 >
-> ## Kernel Panic -> Freezes/Deadlocks (`xhci_hcd` ?)
+> **Kernel Panic -> Freezes/Deadlocks (`xhci_hcd` ?)**
 >
 > I've then made the entire ZFS pool available as NFS share to a Debian based VM (via `zfs` directly), alognside an NFS share for the external drive (via old-school `/etc/export`, using `no_root_squash` and hence, said `root` user), which **had exactly the same effect** - a freeze after 2hrs. I am not surprised, but at least for me, that locates the issue firmly within kernel-space and whatever I'm doing within userspace shouldn't matter.
 >
@@ -376,7 +376,7 @@ I will interrupt this to remind you again: This **was** a hardware issue - the c
 >
 >At this point, I've simply changed the USB port from 3.1 to 3.0, since I figured there could be either a hardware issue or a Kernel issue with this driver + USB 3.1. I find the latter very unlikely, since I use this hard drive for monthy backups of this server, but I also wouldn't bet money on me always using the same port.
 >
->## File System is now corrupt
+> **File System is now corrupt**
 >
 >Changing that did not fix it. I've been getting a whole bunch of
 >
@@ -536,7 +536,7 @@ After 19,398 power-on lifetime hours, that's understandable (not great, but unde
 
 Fun fact, I saw this exact `dmesg` kernel message at work the other day:
 
-![Screenshot 2023-02-12 at 12.23.57 PM](Screenshot 2023-02-12 at 12.23.57 PM.png)
+![dmesg.png](dmesg.png)
 
 And if you made it that far, I'm reasonably certain you've seen it, too. This is a very simple out of memory error, where the kernel nukes processes when it's low on available RAM. This happened while running `zfs` backups.
 
