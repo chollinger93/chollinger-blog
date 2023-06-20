@@ -25,7 +25,7 @@ copyright = "© Christian Hollinger"
   # Max tags
   maxTags = 7
   # Define words per minute to approximate reading time
-  wpm = 300
+  wpm = 250
 
   # Stupid footers :)
   footers = [ 
@@ -50,6 +50,12 @@ copyright = "© Christian Hollinger"
   # Github base url
   github = "https://github.com/chollinger93/chollinger-blog"
 
+  # For statistics, we can compare the total word count against a book of your choice
+	statisticsEnabled = true
+	referenceBookWords = 95356.0
+	referenceBook = "The Hobbit"
+	referenceAuthor = "J. R. R. Tolkien"
+
 # Nav.
 [[menu.main]]
 name = "Home"
@@ -62,7 +68,7 @@ url = "/about"
 weight = 3
 
 [[menu.main]]
-name = "Tags"
+name = "Tags & Stats"
 url = "/tags"
 weight = 4
 
