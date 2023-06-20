@@ -423,7 +423,7 @@ In a single leader system, the access is sequential: The leader will only accept
 
 Furthermore, while workers *do* operate independently from one another, their output is discarded as meaningless if an entire job has not completed yet (which is, again, entirely controlled by the leader):
 
-{{< figure src="img/DistributedSystem-Consitency 2.drawio.png" caption="Consistency in Bridge Four" attr="Author"  attrlink="https://chollinger.com">}}
+{{< figure src="img/DistributedSystem-Consitency2.drawio.png" caption="Consistency in Bridge Four" attr="Author"  attrlink="https://chollinger.com">}}
 
 
 ### Consensus & Fault Tolerance, and Replicated State Machines
@@ -917,7 +917,7 @@ That is mostly because assigning IDs is a side-effect.
 
 IDs model a simple hierarchy, but are worth calling out here to connect the dots:
 
- ![DistributedSystem-IDs.drawio](DistributedSystem-IDs.drawio.png)
+{{< figure src="img/DistributedSystem-IDs.drawio.png" caption="IDs"  attr="Author"  attrlink="https://chollinger.com">}}
 
 And hence, get a couple of tuple containers:
 
