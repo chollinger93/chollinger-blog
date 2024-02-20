@@ -9,7 +9,7 @@ copyright = "© Christian Hollinger"
   posts = "/:year/:month/:title"
 
 [params]
-  subtitle = "Software Engineering, GNU/Linux, Data, ML, and other things"
+  subtitle = "Software Engineering, GNU/Linux, Data, GIS, and other things I like"
   # Optional 64x64 avatar image.
 	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
   featherIconsCDN = false
