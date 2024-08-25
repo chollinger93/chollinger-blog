@@ -1,8 +1,8 @@
 ---
-title: "Why I still self host my servers (and things I've recently learned)"
+title: "Why I still self host my servers (and what I've recently learned)"
 date: 2024-08-25
 description: "A short story on why I still go through the effort of self hosting servers and some things it taught me recently."
-tags: ["linux", "server", "networking", "homelab", "aws"]
+tags: ["linux", "server", "networking", "homelab", "aws", "distributed systems", "proxmox"]
 ---
 
 ## Introduction
@@ -34,14 +34,14 @@ I self host:
 - `Calibre Web` for E-Books and papers
 - `Komga` for comics 
 - `Jellyfin` for general media
-- Homebridge` for internet of sh*t (tm) devices I don't need
+- `Homebridge` for internet of sh*t (tm) devices I don't need
 
 In addition to that, I _also_ have had an external VPS for 10+ years, which hosts:
 - `nginx` for my website and this blog
 - `firefoxsync-rs`, Firefox sync to sync Firefox synchronously (the new `rust` version, too!)
 - `Nextcloud` to host files, calendar, and contacts
 
-As you can imagine, this can be quite a bit of work. I, despite common sentiment, also have a live outside of computers. Matter of fact, I'd rather spend my Saturdays outside. Which sometimes conflicts with hosting all this. 
+As you can imagine, this can be quite a bit of work. I, despite common sentiment, also have a live outside of computers. Matter of fact, I'd rather spend my weekends outside (provided it's not 90 degrees). Which sometimes conflicts with hosting all this. 
 
 {{< figure src="assets/image-20240825135445550.png" caption="For those unfamiliar: Outdoors! (Sample image from our garden)" attr="by me" attrlink="https://chollinger.com">}}
 
@@ -77,15 +77,17 @@ And when it _does_ happen, being able to reason about complex systems by means o
 
 Self hosting all these services - especially, if they take you a look deeper into a rabbit hole than just copy pasting commands - will teach you a lot of new things that help with this.
 
-Let me give you a small handful of real-world examples - some things are simply Linux basics that are useful, but perhaps obscure enough for a regular dev on a regular Mac not to be aware of, unless they self host and self manage servers or daily-drive Linux themselves. 
+Let me give you a small handful of real-world examples - often times, simple Linux *administration* basics can be useful. The best ways to acquire those is to either daily drive Linux (personally, I'm on macOS these days)... or self host and self manage servers.
 
-For instance, knowing that setting [swapiness](https://www.howtogeek.com/449691/what-is-swapiness-on-linux-and-how-to-change-it/) is seldom useful and calling that out in pull requests or knowing that messing with [`LD_LIBRARY_PATH`](https://www.hpc.dtu.dk/?page_id=1180)  is a surefire way to frustration. However, being aware that both _can be_ a valid tool to deal with obscure cases (for the latter, we mix `poetry` and `nix` and you can see where that is going) is useful.
-
-{{< figure src="assets/image-20240825131026074.png" caption="Here's a picture out our neighborhood barn cat, so you don't get too bored" attr="by me" attrlink="https://chollinger.com">}}
+For instance, knowing that setting [swapiness](https://www.howtogeek.com/449691/what-is-swapiness-on-linux-and-how-to-change-it/) is seldom useful and calling that out in pull requests or knowing that messing with [`LD_LIBRARY_PATH`](https://www.hpc.dtu.dk/?page_id=1180)  is a surefire way to frustration. However, being aware that both _can be_ a valid tool to deal with obscure cases (for the latter, we mix `poetry` and `nix` and you can see where that is going) is helpful.
 
 Of course babysitting and maintaining a distributed infrastructure (like Proxmox) or [writing one from scratch](https://github.com/chollinger93/bridgefour) is also helpful to maintain, design, and/or implement _other_ complex distributed systems that span more than one concept.
 
-One of my pet projects at work is an [Apache Flink](https://flink.apache.org/) pipeline (itself an inherently distributed framework), written in Scala 3, that uses typeclass derivation via [magnolia](https://github.com/softwaremill/magnolia) and [avro4s](https://github.com/sksamuel/avro4s) to turn [protobuf](https://scalapb.github.io/) messages into [Apache Iceberg](https://iceberg.apache.org/) via [Kafka](https://kafka.apache.org/) (it does a bit more, but these are the basics). This project involved, in no particular order, a more-than-surface-level understanding of the following concepts that _aren't_ core "programming" task: VPCs and a bunch of networking, Kubernetes, GRPC, exactly-once/at-least-once semantics, eventual consistency, transactional locks, some [compiler building](https://github.com/scalapb/ScalaPB/pull/1674), protobufs & schema evolution, Kafka (or general data storage replication and multi tenancy), blob storage, a ton of metrics & monitoring (and hence, timeseries databases for lack of a better umbrella term) and so on.
+One of my pet projects at work is an [Apache Flink](https://flink.apache.org/) pipeline (itself an inherently distributed framework), written in Scala 3, that uses typeclass derivation via [magnolia](https://github.com/softwaremill/magnolia) and [avro4s](https://github.com/sksamuel/avro4s) to turn [protobuf](https://scalapb.github.io/) messages into [Apache Iceberg](https://iceberg.apache.org/) via [Kafka](https://kafka.apache.org/) (it does a bit more, but these are the basics). This project involved, in no particular order, a more-than-surface-level understanding of the following concepts that _aren't_ core "programming" task, in *addition* to the core stuff (since it's `scala`, stuff like tagless final): 
+
+VPCs and a bunch of networking, Kubernetes, GRPC, exactly-once/at-least-once semantics, eventual consistency, transactional locks, some [compiler building](https://github.com/scalapb/ScalaPB/pull/1674), protobufs & schema evolution, Kafka (or general data storage replication and multi tenancy), blob storage, a ton of metrics & monitoring (and hence, timeseries databases for lack of a better umbrella term) and so on.
+
+{{< figure src="assets/image-20240825131026074.png" caption="Here's a picture out our neighborhood barn cat, so you don't get too bored while we talk about protobuf compilers" attr="by me" attrlink="https://chollinger.com">}}
 
 Of course, if you are a reasonably seasoned engineer who has worked on distributed systems before, none of these topics will probably inherently new or scary - but the point is that a lot of them overlap with a lot of the things you deal with when you self host software - in fact, out of the 11 or so points I mentioned, I'm willing to wager I've dealt with at least 8 of them during my self-hosting adventures.
 
@@ -110,14 +112,15 @@ This is a simple, but neat one: The OS part of VS Code is something that runs in
 
 Very useful to use VS Code on a device like an iPad or a Mac (or Windows) that wants a Linux box. Mine runs on `Ubuntu`.
 
-
 {{< figure src="assets/image-20240825131634407.png" caption="Useful on an iPhone? Eh..." attr="by me" attrlink="https://chollinger.com">}}
+
+I stumbled upon this while wondering if I can make my overpriced iPad Pro a bit more useful. Turns out, you can! Not saying you *should*, but you *can*.
 
 ### UPS batteries die silently and quicker than you think
 
 UPS batteries, at least consumer ones like my simple 1U Cyberpower 1500VA only last about *3 years*. Mine, being 4 years old, were *completely* dead. While I'm conceptually aware that not everything is a long-lived lithium based powerhouse, I did _not_ know they go to "unusable capacity" that quickly.
 
-I learned _that_ the hard way after getting hit by brown outs and power outages that are pretty common here, and seemingly randomly, "the internet" was down. Turns out, without a redundant DNS, the internet doesn't work. 
+I learned that the hard way after getting hit by brown outs and power outages that are pretty common here, and seemingly randomly, "the internet" was down. Turns out, without a redundant DNS, the internet doesn't work. 
 
 Changing these batteries was actually pretty straightforward (thanks to RefurbUPS).
 
@@ -158,6 +161,10 @@ But, this [repo](https://github.com/jiangcuo/Proxmox-Port) on GitHub preps Proxm
 Not recommended and unsupported? Sure! So is using `zfs` via an USB device. Still works (within reason)!
 
 {{< figure src="assets/image-20240607214732963.png" caption="Promox nodes" attr="by me" attrlink="https://chollinger.com" >}}
+
+I mentioned "Poor man's High Availability" a second ago: Funnily enough, [Linus Tech Tips](https://www.youtube.com/watch?v=hNrr0aJgxig) recently made a video about Proxmox proper H/A VMs and failovers. My DNS setup is not that, but _could_ be, since I now have 3 nodes, thanks to my frankenstein'd ARM node. And as they say: Three's a quorum, baby! 
+
+*As another little side tangent*: The first time I dealt with "quorums" was in the early `hadoop` days, where manually configuring `zookeeper`, `hdfs` etc. and making sure your cluster can form a quorum was actually important. It was certainly more complicated than "just deploy this job to AWS" (and I don't want to do that again), but it certainly taught me a lot about how the sausage is made!
 
 ### `zfs` + Proxmox eat memmory and will OOM kill your VMS
 
@@ -233,7 +240,7 @@ Uses Simple Network Management Protocol ([SNMP](https://en.wikipedia.org/wiki/Si
 
 I have all devices (that support it) on the network in LibreNMS, using the most "secure" version of the protocol, V3. 
 
-It does everything a cool, modern, SaaS based tracing and monitoring service does, for free. Maybe not _all_ of it - but it's delightfully in depth. Other options (not necessarily mutually exclusive) are `zabbix` and `munin`, both of which I played with before, but never stuck to. This is a deceptively deep field, turns out, and not one I'm very knowledgeable about. 
+It does everything a cool, modern, SaaS based tracing and monitoring service does, for free. Well, maybe not _all_ of it - but it's delightfully in depth. Other options (not necessarily mutually exclusive) are `zabbix` and `munin`, both of which I played with before, but never stuck to. This is a deceptively deep field, turns out, and not one I'm very knowledgeable about. 
 
 {{< figure src="assets/image-20240824103028884.png" caption="LibreNMS" attr="by me" attrlink="https://chollinger.com" >}}
 
@@ -323,7 +330,7 @@ I stumbled upon Hetzner's "[StorageBox](https://www.hetzner.com/storage/storage-
 
 You can access these disks via FTP, SFTP or SCP (aka SSH), WebDAV, various backup tools like `borg` and so on. 
 
-Overall a pretty promising concept, but once you need to attach said disk to a server to make the local storage bigger and usable w/in Nextcloud, your options are somewhat limited and the official [docs](https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/) recommend `samba`/`cifs`. [`sshfs`](https://github.com/libfuse/sshfs) is a valid alternative, the project is in maintenance mode. I suppose conceptually you could make WebDAV work.
+Overall a pretty promising concept, but once you need to attach said disk to a server to make the local storage bigger and usable w/in Nextcloud, your options are somewhat limited and the official [docs](https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/) recommend `samba`/`cifs`. [`sshfs`](https://github.com/libfuse/sshfs) is a valid alternative, the project is in maintenance mode, but I tested it anyways. I suppose conceptually you could make WebDAV work.
 
 In any case, I tried using the official approach and benchmarked a bit because it certainly _felt_ slow.
 
@@ -411,6 +418,6 @@ Overall, I'm a fan - it certainly feels like a natural evolution of `fail2ban` (
 
 ## Conclusion
 
-Must there be one? If you're a software engineer, I recommend self hosting things. You learn a whole bunch of things through forced exposure to problems that you'll be less likely to encounter in your day job, which in itself is a benefit.
+If you're a software engineer, I recommend self hosting things. You learn a whole bunch of things through forced exposure to problems that you'll be less likely to encounter in your day job, which in itself is a benefit. Even better, I do believe you'll wind up using at least some of these things in your day job eventually, provided you work on something vaguely backend related.
 
-You also get a reasonable level of autonomy - or, at the very least, some hedging - against the corporate dream of your entire life being a perpetually rented subscription. I think that's nice.
+By hosting stuff yourself, also get a reasonable level of autonomy - or, at the very least, some hedging - against the corporate dream of your entire life being a perpetually rented subscription. I think that's nice.
