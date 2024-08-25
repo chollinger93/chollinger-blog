@@ -2,3 +2,6 @@
 	path = themes/ink-free
 	url = https://github.com/chollinger93/ink-free
 	branch = master
+[submodule "themes/hugo-notice"]
+	path = themes/hugo-notice
+	url = https://github.com/martignoni/hugo-notice.git

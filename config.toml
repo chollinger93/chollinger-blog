@@ -1,7 +1,7 @@
 baseURL = "https://chollinger.com/blog/"
 languageCode = "en-us"
 title = "Christian Hollinger"
-theme = "ink-free"
+theme = ["hugo-notice", "ink-free"]
 
 copyright = "© Christian Hollinger"
 
@@ -13,7 +13,7 @@ copyright = "© Christian Hollinger"
   # Optional 64x64 avatar image.
 	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
   featherIconsCDN = false
-  #mode = "dark" # "dark" or "auto"
+  mode = "auto" # "dark" or "auto"
 
   # Enable a table of contents:
 	# Either "static"/true, "floating", "both", or "none" (default: static)
