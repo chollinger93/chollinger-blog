@@ -43,6 +43,8 @@ In addition to that, I _also_ have had an external VPS for 10+ years, which host
 
 As you can imagine, this can be quite a bit of work. I, despite common sentiment, also have a live outside of computers. Matter of fact, I'd rather spend my Saturdays outside. Which sometimes conflicts with hosting all this. 
 
+{{< figure src="assets/image-20240825135445550.png" caption="For those unfamiliar: Outdoors! (Sample image from our garden)" attr="by me" attrlink="https://chollinger.com">}}
+
 So... why bother?
 
 ## Why I self host
