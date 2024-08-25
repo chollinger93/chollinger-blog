@@ -3,6 +3,7 @@ title: "Why I still self host my servers (and what I've recently learned)"
 date: 2024-08-25
 description: "A short story on why I still go through the effort of self hosting servers and some things it taught me recently."
 tags: ["linux", "server", "networking", "homelab", "aws", "distributed systems", "proxmox"]
+aliases: ["/2024/08/why-i-still-self-host-my-servers-and-things-ive-recently-learned"]
 ---
 
 ## Introduction
