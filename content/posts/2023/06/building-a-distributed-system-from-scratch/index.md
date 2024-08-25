@@ -7,6 +7,8 @@ tags: ["programming", "scala", "distributed systems", "functional programming", 
 
 ## Introduction
 
+**Part 2 can be found [here](/blog/2024/02/improving-my-distributed-system-with-scala-3-consistency-guarantees-background-tasks-part-2/)!**
+
 Having found myself recently fun-employed in the great tech layoffs of 2023 (cue ominous thunder in the background) [1], I found myself in a bit of a conundrum: For landing a job, one needs to pass interviews. For passing interviews, one needs to jump through ridiculous hoops and, one of my *favorite* phrases, "grind Leetcode".
 
 That is associated with two problems: It is ridiculously boring, dull, and, more importantly, completely (pardon my French) *f\*cking useless*. 
@@ -780,20 +782,20 @@ With that knowledge - and the general understanding that we need to start jobs a
 
 Defining the routes beforehand helps us to understand and check the flow of the application and helps us structure our code:
 
-| Component | Method | Route   | Call             | Payload    | Returns                      | Description                                                  | Implemented |
-| --------- | ------ | ------- | ---------------- | ---------- | ---------------------------- | ------------------------------------------------------------ | ----------- |
-| Kaladin   | POST   | /       | start            | JobConfig  | JobDetails                   | Starts a job                                                 | X           |
-| Kaladin   | GET    | /       | list / $JobId    | -          | JobDetails                   | Lists a single job                                           |             |
-| Kaladin   | GET    | /       | list             | -          | list[JobDetails]             | Lists all jobs                                               |             |
-| Kaladin   | GET    | /       | status / $JobID  | -          | ExecutionStatus              | Gets the result of a job, as Status                          | X           |
+| Component | Method | Route   | Call             | Payload    | Returns                      | Description                                                                                                 | Implemented |
+| --------- | ------ | ------- | ---------------- | ---------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------- |
+| Kaladin   | POST   | /       | start            | JobConfig  | JobDetails                   | Starts a job                                                                                                | X           |
+| Kaladin   | GET    | /       | list / $JobId    | -          | JobDetails                   | Lists a single job                                                                                          |             |
+| Kaladin   | GET    | /       | list             | -          | list[JobDetails]             | Lists all jobs                                                                                              |             |
+| Kaladin   | GET    | /       | status / $JobID  | -          | ExecutionStatus              | Gets the result of a job, as Status                                                                         | X           |
 | Kaladin   | GET    | /       | refresh / $JobID | -          | ExecutionStatus              | Gets the result of a job and starts more teasks, if necessary,  as Status. Stop-gap until this is automated | X           |
-| Kaladin   | GET    | /       | data / $JobID    | -          | Either[ExecutionStatus,JSON] | Gets data, if its available. Like a Spark.collect() - moves  data from workers to leader | X           |
-| Kaladin   | GET    | /       | cluster          | -          | Map[WorkerId, WorkerStatus]  | List cluster status                                          | X           |
-| Rock      | GET    | /worker | state            | -          | -                            | 200 OK for health                                            | X           |
-| Rock      | GET    | /worker | status           | -          | WorkerState                  | Details on slots + tasks                                     | X           |
-| Rock      | GET    | /task   | status / $TaskId | -          | ExecutionStatus              | Gets the status of a task                                    |             |
-| Rock      | POST   | /task   | start            | TaskConfig | ExecutionStatus              | Starts a tasks as a member of a job                          | X           |
-| Rock      | PUT    | /task   | stop / $TaskId   | -          | ExecutionStatus              | Stops a task                                                 |             |
+| Kaladin   | GET    | /       | data / $JobID    | -          | Either[ExecutionStatus,JSON] | Gets data, if its available. Like a Spark.collect() - moves  data from workers to leader                    | X           |
+| Kaladin   | GET    | /       | cluster          | -          | Map[WorkerId, WorkerStatus]  | List cluster status                                                                                         | X           |
+| Rock      | GET    | /worker | state            | -          | -                            | 200 OK for health                                                                                           | X           |
+| Rock      | GET    | /worker | status           | -          | WorkerState                  | Details on slots + tasks                                                                                    | X           |
+| Rock      | GET    | /task   | status / $TaskId | -          | ExecutionStatus              | Gets the status of a task                                                                                   |             |
+| Rock      | POST   | /task   | start            | TaskConfig | ExecutionStatus              | Starts a tasks as a member of a job                                                                         | X           |
+| Rock      | PUT    | /task   | stop / $TaskId   | -          | ExecutionStatus              | Stops a task                                                                                                |             |
 
 I won't go over each and every route here, but this overview should give us an idea on what to build. It is also useful for PM to track the implementation status of each route, since realistically, each route would be its own ticket. 
 
