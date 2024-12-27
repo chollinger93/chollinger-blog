@@ -52,3 +52,4 @@ Cargo.lock
 \.\$*
 .backup
 *.xls*$
+resources/_gen
