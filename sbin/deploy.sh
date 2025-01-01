@@ -14,7 +14,6 @@ BACKUP_DIR=$HOME/backups/blog/"$(date --iso)"
 mkdir -p "$BACKUP_DIR"
 
 cd "${DIR}/.."
-git submodule update --init --recursive && git submodule update --remote
 hugo --minify -d blog
 mv "$WWW_ROOT/blog" "$BACKUP_DIR"
 rm -rf "$WWW_ROOT/blog"
