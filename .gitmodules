@@ -6,4 +6,4 @@
 [submodule "themes/hugo-admonitions"]
 	path = themes/hugo-admonitions
 	url = https://github.com/KKKZOZ/hugo-admonitions
-	branch = a3cd31c75cd6ccdf10f1d53c5b94eeaf0797d813
+	branch = master

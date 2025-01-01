@@ -7,6 +7,11 @@ tags: ["linux", "server", "networking", "debian", "proxmox", "truenas", "zfs", "
 
 ## Introduction
 
+> [!CAUTION]
+> I do not recommend virtualizing TrueNAS any longer, even with a device passthrough.
+>
+> Plase see my [2025 update](/blog/2025/01/my-2025-homelab-updates-quadrupling-capacity-because-why-not/) for an alternative.
+
 My [home server](/blog/2023/04/migrating-a-home-server-to-proxmox-truenas-and-zfs-or-how-to-make-your-home-network-really-complicated-for-no-good-reason/) is a Proxmox cluster. Recently, one of the host's SSDs indicated it needed a replacement.
 
 I run [TrueNas SCALE](https://www.truenas.com/truenas-scale/) on it by passing through all my hard drives via LSI HBA so that `zfs` has access to the raw hardware, which makes the migration to a new SSD a bit tricker. For added difficulty, this process assumes the SSD is a NVMe drive on a system with a single m.2 slot.
@@ -31,13 +36,13 @@ Next, turn off all existing VMs on the host. If any of the VMs runs critical ser
 
 ![assets/shutdown_vm.png](assets/shutdown_vm.png)
 
-Lastly, prepare the network for the loss of node in the cluster, e.g. if you run a DNS resolver or any other network software that is not redundant on it. 
+Lastly, prepare the network for the loss of node in the cluster, e.g. if you run a DNS resolver or any other network software that is not redundant on it.
 
 ## Back up the `zfs` root of the host
 
 The default `zfs` pool in Proxmox is called `rpool`. Create a recursive snapshot.
 
-```bash 
+```bash
 zfs snapshot -r rpool@new-root-drive
 ```
 
@@ -76,7 +81,7 @@ TIME        SENT   SNAPSHOT rpool/data@new-root-drive
 
 If you get an instant result here, though, maybe consider being skeptical on how your computer *actually copied* (presumably) hundreds of GiB within seconds. `zfs` will **not** warn you that it just copied *only* the 104K root without `-v`.
 
-Conceptually, you could also pipe this to a file, but I haven't tried that myself. 
+Conceptually, you could also pipe this to a file, but I haven't tried that myself.
 
 Confirm it exists:
 
@@ -126,7 +131,7 @@ The system will reboot once it's done. Poke around on the web UI to make sure ev
 
 ## Restore the backup
 
-At this point, you have the new SSD installed, and the snapshot of the old SSD available either on the network or a different drive. 
+At this point, you have the new SSD installed, and the snapshot of the old SSD available either on the network or a different drive.
 
 First, import the backup pool if you used an internal drive as backup target.
 
@@ -166,7 +171,7 @@ At this point, your brand new SSD should have a pool called `rpool` that contain
 Now, and this is critical, confirm that no two mountpoints overlap:
 
 ```bash
-zfs list 
+zfs list
 ```
 
 For me, this happened:
@@ -193,7 +198,7 @@ And a lot of erratic behavior.
 
 Fix by this by:
 
-```bash 
+```bash
 zfs set mountpoint=/vms-bigiron/bigiron-host-backup/ROOT/pve-1 vms-bigiron/bigiron-host-backup/ROOT/pve-1
 ```
 
@@ -201,7 +206,7 @@ And reboot.
 
 Next, confirm everything's happy via
 
-```bash 
+```bash
 root@bigiron:~# systemctl list-units --failed
   UNIT LOAD ACTIVE SUB DESCRIPTION
 0 loaded units listed
@@ -210,6 +215,10 @@ root@bigiron:~# systemctl list-units --failed
 ## Confirm the HBA is set up correctly
 
 Since we only restored the `data` dataset, we need to do this again. `ssh` into the new-old machine. If you're brave and restored the entire `rpool` in the previous step, this will all be set.
+
+
+> [!DANGER]
+> Make sure to blacklist the HBA on the host. See the [Wiki](https://pve.proxmox.com/wiki/PCI(e)_Passthrough#_host_device_passthrough) for details.
 
 ### `/etc/default/grub`
 
@@ -227,7 +236,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
 
 Run:
 
-```bash 
+```bash
 update-grub2
 ```
 
@@ -249,7 +258,7 @@ root=ZFS=rpool/ROOT/pve-1 boot=zfs quiet intel_iommu=on iommu=pt
 
 Run:
 
-```bash 
+```bash
 pve-efiboot-tool refresh
 ```
 
@@ -275,7 +284,7 @@ Run:
 update-initramfs -u -k all
 ```
 
-This loads the required kernel modules for PCI passthrough. 
+This loads the required kernel modules for PCI passthrough.
 
 Now reboot the box.
 
