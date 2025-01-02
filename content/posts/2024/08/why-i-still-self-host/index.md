@@ -33,7 +33,7 @@ I self host:
 - `InfluxDB` for specific database needs (aka "projects I mean to get back into")
 - `LibreNMS` as a network manager and monitoring suite
 - `Calibre Web` for E-Books and papers
-- `Komga` for comics 
+- `Komga` for comics
 - `Jellyfin` for general media
 - `Homebridge` for internet of sh*t (tm) devices I don't need
 
@@ -42,7 +42,7 @@ In addition to that, I _also_ have had an external VPS for 10+ years, which host
 - `firefoxsync-rs`, Firefox sync to sync Firefox synchronously (the new `rust` version, too!)
 - `Nextcloud` to host files, calendar, and contacts
 
-As you can imagine, this can be quite a bit of work. I, despite common sentiment, also have a live outside of computers. Matter of fact, I'd rather spend my weekends outside (provided it's not 90 degrees). Which sometimes conflicts with hosting all this. 
+As you can imagine, this can be quite a bit of work. I, despite common sentiment, also have a live outside of computers. Matter of fact, I'd rather spend my weekends outside (provided it's not 90 degrees). Which sometimes conflicts with hosting all this.
 
 {{< figure src="assets/image-20240825135445550.png" caption="For those unfamiliar: Outdoors! (Sample image from our garden)" attr="by me" attrlink="https://chollinger.com">}}
 
@@ -84,7 +84,7 @@ For instance, knowing that setting [swapiness](https://www.howtogeek.com/449691/
 
 Of course babysitting and maintaining a distributed infrastructure (like Proxmox) or [writing one from scratch](https://github.com/chollinger93/bridgefour) is also helpful to maintain, design, and/or implement _other_ complex distributed systems that span more than one concept.
 
-One of my pet projects at work is an [Apache Flink](https://flink.apache.org/) pipeline (itself an inherently distributed framework), written in Scala 3, that uses typeclass derivation via [magnolia](https://github.com/softwaremill/magnolia) and [avro4s](https://github.com/sksamuel/avro4s) to turn [protobuf](https://scalapb.github.io/) messages into [Apache Iceberg](https://iceberg.apache.org/) via [Kafka](https://kafka.apache.org/) (it does a bit more, but these are the basics). This project involved, in no particular order, a more-than-surface-level understanding of the following concepts that _aren't_ core "programming" task, in *addition* to the core stuff (since it's `scala`, stuff like tagless final): 
+One of my pet projects at work is an [Apache Flink](https://flink.apache.org/) pipeline (itself an inherently distributed framework), written in Scala 3, that uses typeclass derivation via [magnolia](https://github.com/softwaremill/magnolia) and [avro4s](https://github.com/sksamuel/avro4s) to turn [protobuf](https://scalapb.github.io/) messages into [Apache Iceberg](https://iceberg.apache.org/) via [Kafka](https://kafka.apache.org/) (it does a bit more, but these are the basics). This project involved, in no particular order, a more-than-surface-level understanding of the following concepts that _aren't_ core "programming" task, in *addition* to the core stuff (since it's `scala`, stuff like tagless final):
 
 VPCs and a bunch of networking, Kubernetes, GRPC, exactly-once/at-least-once semantics, eventual consistency, transactional locks, some [compiler building](https://github.com/scalapb/ScalaPB/pull/1674), protobufs & schema evolution, Kafka (or general data storage replication and multi tenancy), blob storage, a ton of metrics & monitoring (and hence, timeseries databases for lack of a better umbrella term) and so on.
 
@@ -92,7 +92,7 @@ VPCs and a bunch of networking, Kubernetes, GRPC, exactly-once/at-least-once sem
 
 Of course, if you are a reasonably seasoned engineer who has worked on distributed systems before, none of these topics will probably inherently new or scary - but the point is that a lot of them overlap with a lot of the things you deal with when you self host software - in fact, out of the 11 or so points I mentioned, I'm willing to wager I've dealt with at least 8 of them during my self-hosting adventures.
 
-Lastly, as hinted to above, at `$work` I also "own" (isn't that a horribly "corporate" word in this context?) several Open Source tools, which we self-host and dogfood on Kubernetes, such as [Apache Superset](https://superset.apache.org/). The parallels to what this article about should be relatively obvious. :-) 
+Lastly, as hinted to above, at `$work` I also "own" (isn't that a horribly "corporate" word in this context?) several Open Source tools, which we self-host and dogfood on Kubernetes, such as [Apache Superset](https://superset.apache.org/). The parallels to what this article about should be relatively obvious. :-)
 
 ## Things that broke in the last 6 months
 
@@ -109,7 +109,7 @@ So, allow me to rapid fire a bunch of things I did in the same timeframe, partia
 
 ### You can self host VS Code
 
-This is a simple, but neat one: The OS part of VS Code is something that runs in a browser. Same concept that powers GitHub's codespaces, but self hosted: https://github.com/coder/code-server 
+This is a simple, but neat one: The OS part of VS Code is something that runs in a browser. Same concept that powers GitHub's codespaces, but self hosted: https://github.com/coder/code-server
 
 Very useful to use VS Code on a device like an iPad or a Mac (or Windows) that wants a Linux box. Mine runs on `Ubuntu`.
 
@@ -121,7 +121,7 @@ I stumbled upon this while wondering if I can make my overpriced iPad Pro a bit 
 
 UPS batteries, at least consumer ones like my simple 1U Cyberpower 1500VA only last about *3 years*. Mine, being 4 years old, were *completely* dead. While I'm conceptually aware that not everything is a long-lived lithium based powerhouse, I did _not_ know they go to "unusable capacity" that quickly.
 
-I learned that the hard way after getting hit by brown outs and power outages that are pretty common here, and seemingly randomly, "the internet" was down. Turns out, without a redundant DNS, the internet doesn't work. 
+I learned that the hard way after getting hit by brown outs and power outages that are pretty common here, and seemingly randomly, "the internet" was down. Turns out, without a redundant DNS, the internet doesn't work.
 
 Changing these batteries was actually pretty straightforward (thanks to RefurbUPS).
 
@@ -145,7 +145,7 @@ I then used that mapping to map hostnames to IPs w/in the Pi-Hole:
 
 {{< figure src="assets/image-20240607214429699.png" caption="DNS Mapping" attr="by me" attrlink="https://chollinger.com" >}}
 
-Then, it was just a matter of configuring the two Pi-Hole servers in RouterOS to make both available for clients. Poor man's H/A! 
+Then, it was just a matter of configuring the two Pi-Hole servers in RouterOS to make both available for clients. Poor man's H/A!
 
 Since we don't add devices that often (and I add all services that _need_ a DNS name to [heimdall](https://github.com/linuxserver/Heimdall)), it works well enough to grok Pi-Hole logs to manually copy over configs when something changes.
 
@@ -153,17 +153,17 @@ I've got it on my list to host [orbital-sync](https://github.com/mattwebbio/orbi
 
 At this point, you _can_ also enforce the use of said DNS servers (which may be a good idea with kids or in a work setting) by means of firewall rules around port 53 UDP traffic. RouterOS can do that easily.
 
-### Raspberry PIs run ARN, Proxmox does not
+### Raspberry PIs run ARM, Proxmox does not
 
-Normally, Proxmox is x86 only. 
+Normally, Proxmox is x86 only.
 
-But, this [repo](https://github.com/jiangcuo/Proxmox-Port) on GitHub preps Proxmox for ARM. Because of that, my little Raspberry Pi 5 is now a Proxmox node, which runs UniFi and one of the Pi-Holes. 
+But, this [repo](https://github.com/jiangcuo/Proxmox-Port) on GitHub preps Proxmox for ARM. Because of that, my little Raspberry Pi 5 is now a Proxmox node, which runs UniFi and one of the Pi-Holes.
 
 Not recommended and unsupported? Sure! So is using `zfs` via an USB device. Still works (within reason)!
 
 {{< figure src="assets/image-20240607214732963.png" caption="Promox nodes" attr="by me" attrlink="https://chollinger.com" >}}
 
-I mentioned "Poor man's High Availability" a second ago: Funnily enough, [Linus Tech Tips](https://www.youtube.com/watch?v=hNrr0aJgxig) recently made a video about Proxmox proper H/A VMs and failovers. My DNS setup is not that, but _could_ be, since I now have 3 nodes, thanks to my frankenstein'd ARM node. And as they say: Three's a quorum, baby! 
+I mentioned "Poor man's High Availability" a second ago: Funnily enough, [Linus Tech Tips](https://www.youtube.com/watch?v=hNrr0aJgxig) recently made a video about Proxmox proper H/A VMs and failovers. My DNS setup is not that, but _could_ be, since I now have 3 nodes, thanks to my frankenstein'd ARM node. And as they say: Three's a quorum, baby!
 
 *As another little side tangent*: The first time I dealt with "quorums" was in the early `hadoop` days, where manually configuring `zookeeper`, `hdfs` etc. and making sure your cluster can form a quorum was actually important. It was certainly more complicated than "just deploy this job to AWS" (and I don't want to do that again), but it certainly taught me a lot about how the sausage is made!
 
@@ -171,7 +171,7 @@ I mentioned "Poor man's High Availability" a second ago: Funnily enough, [Linus 
 
 Did you know OOM kills were "a thing" in `$currentYear`? Sure are! I run `TrueNAS Scale` with a [SAS HBA in PCI passthru mode](/blog/2023/10/moving-a-proxmox-host-with-a-sas-hba-as-pci-passthrough-for-zfs--truenas/) and had my machines OOM killed occasionally when both Proxmox backups + device backups where running.
 
-Now, as a tangent on top of the tangent - running that config for TrueNAS is _also_ unsupported/discouraged by TrueNAS, which wants to run on bare metal. 
+Now, as a tangent on top of the tangent - running that config for TrueNAS is _also_ unsupported/discouraged by TrueNAS, which wants to run on bare metal.
 
 Anyways, Proxmox, by default, uses up to 50% of memory for the `zfs` cache, which, in combination with the VM being configured to use ~80%, didn't work out too well in an environment with limited RAM - and one that consists of almost exclusively refurbished, old RAM sticks from other computers.
 
@@ -217,7 +217,7 @@ Error 4 occurred at disk power-on lifetime: 27469 hours (1144 days + 13 hours)
 
 {{< figure src="assets/image-20240607215539705.png" caption="LibreNMS monitoring" attr="by me" attrlink="https://chollinger.com" >}}
 
-Replace drive, problem solved. Funny how that works. 
+Replace drive, problem solved. Funny how that works.
 
 `$BigHardDrive` will tell you to *only* use shiny, new, fancy, expensive drives, but the man with the server rack in the basement tells you that you can, in fact, re-use your ancient, assorted pieces of hardware for ultimately unimportant backups with ~~no~~ almost no issues!
 
@@ -227,9 +227,9 @@ I live precariously through reminders. One I had on my list for a while was "aut
 
 These graphs above from the decaying HDD? [LibreNMS](https://www.librenms.org/)!
 
-Uses Simple Network Management Protocol ([SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol?useskin=vector)). An ancient protocol from the 80's that does _exactly_ that: Monitors your stuff. I just never bothered setting it up, since it is somewhat of an arcane protocol to modern eyes. Not that I allow inbound traffic (we have [ngrok](https://ngrok.com/) for that), but a paranoid sysadmin is a good sysadmin. 
+Uses Simple Network Management Protocol ([SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol?useskin=vector)). An ancient protocol from the 80's that does _exactly_ that: Monitors your stuff. I just never bothered setting it up, since it is somewhat of an arcane protocol to modern eyes. Not that I allow inbound traffic (we have [ngrok](https://ngrok.com/) for that), but a paranoid sysadmin is a good sysadmin.
 
-> SNMP depends on secure strings (or “community strings”) that grant  access to portions of devices’ management planes. Abuse of SNMP could  allow an unauthorized third party to gain access to a network device. 
+> SNMP depends on secure strings (or “community strings”) that grant  access to portions of devices’ management planes. Abuse of SNMP could  allow an unauthorized third party to gain access to a network device.
 >
 > SNMPv3 should be the only version of SNMP employed because SNMPv3 has  the ability to authenticate and encrypt payloads. When either SNMPv1 or  SNMPv2 are employed, an adversary could sniff network traffic to  determine the community string. This compromise could enable a  man-in-the-middle or replay attack.
 >
@@ -239,9 +239,9 @@ Uses Simple Network Management Protocol ([SNMP](https://en.wikipedia.org/wiki/Si
 >
 > https://www.cisa.gov/news-events/alerts/2017/06/05/reducing-risk-snmp-abuse
 
-I have all devices (that support it) on the network in LibreNMS, using the most "secure" version of the protocol, V3. 
+I have all devices (that support it) on the network in LibreNMS, using the most "secure" version of the protocol, V3.
 
-It does everything a cool, modern, SaaS based tracing and monitoring service does, for free. Well, maybe not _all_ of it - but it's delightfully in depth. Other options (not necessarily mutually exclusive) are `zabbix` and `munin`, both of which I played with before, but never stuck to. This is a deceptively deep field, turns out, and not one I'm very knowledgeable about. 
+It does everything a cool, modern, SaaS based tracing and monitoring service does, for free. Well, maybe not _all_ of it - but it's delightfully in depth. Other options (not necessarily mutually exclusive) are `zabbix` and `munin`, both of which I played with before, but never stuck to. This is a deceptively deep field, turns out, and not one I'm very knowledgeable about.
 
 {{< figure src="assets/image-20240824103028884.png" caption="LibreNMS" attr="by me" attrlink="https://chollinger.com" >}}
 
@@ -255,9 +255,9 @@ _Only_ VNC through a different IP worked. I was able to talk to my server, which
 
 For a short timeline of events: First, I raise a ticket outlining the problem, including a copy of the DNS config.
 
-I'll refrain from pasting the verbatim interactions here, but their response boiled down to 
+I'll refrain from pasting the verbatim interactions here, but their response boiled down to
 
-> Your problem sounds like a case of not having the DNS server set. 
+> Your problem sounds like a case of not having the DNS server set.
 
 ... followed by a few steps to set the Google DNS servers via `resolv.conf`.
 
@@ -272,13 +272,13 @@ As well as the fun observation that the VPS couldn't talk to anything external. 
 
 {{< figure src="assets/image-20240607221115352.png" caption="Ping says no internally" attr="by me" attrlink="https://chollinger.com" >}}
 
-93.184.215.14 is [example.org](http://example.org/). This would never time out, since I let it run overnight. And yes, I did all of this debugging with `netcat` too, given the limitations of a simple `ping`. 
+93.184.215.14 is [example.org](http://example.org/). This would never time out, since I let it run overnight. And yes, I did all of this debugging with `netcat` too, given the limitations of a simple `ping`.
 
 More curiously, an `arp` scan gave me back 207.244.240.1, which is their data center in Missouri. Which, while available, was spotty to reach from the outside at best:
 
 {{< figure src="assets/image-20240607221122749.png" caption="Flakey" attr="by me" attrlink="https://chollinger.com" >}}
 
-Everything here pointed at a larger network issue on their end, and my server had been offline for 48 hrs. 
+Everything here pointed at a larger network issue on their end, and my server had been offline for 48 hrs.
 
 2 days later, my own options exhausted, the machine is suddenly back online - in a different DC, from what I can tell. I made no further changes and worked on on a migration to Hetzner instead (see below). I get this email:
 
@@ -289,9 +289,9 @@ Everything here pointed at a larger network issue on their end, and my server ha
 
 I'm certainly not above admitting if I _did_ mess something up - I've done it in this article and on this blog many, many times and I _do_ mess up sysadmin stuff frequently - but this time, I promise you I've made zero changes to the box before this happened, neither before it magically was fixed.
 
-I don't expect [99.999%](https://uptime.is/99.999) availability from a more budget VPS, and they do only "[advertise](https://contabo.com/en-us/legal/terms-and-conditions/)" (I use this term lightly - it's hidden in their T&C) and SLA of [95%](https://uptime.is/95), which means they allow for over 18 days of downtime a year. 
+I don't expect [99.999%](https://uptime.is/99.999) availability from a more budget VPS, and they do only "[advertise](https://contabo.com/en-us/legal/terms-and-conditions/)" (I use this term lightly - it's hidden in their T&C) and SLA of [95%](https://uptime.is/95), which means they allow for over 18 days of downtime a year.
 
-> (1) The Provider will ensure that the physical connectivity  of the object storage infrastructure, webspace packages, dedicated  servers, virtual dedicated server and VPS is available at an annual  average rate of 95%. 
+> (1) The Provider will ensure that the physical connectivity  of the object storage infrastructure, webspace packages, dedicated  servers, virtual dedicated server and VPS is available at an annual  average rate of 95%.
 
 Unfortunately, this *interaction*, not necessarily the downtime itself was so bad that I stopped recommending Contabo entirely and since moved to Hetzner - and, of course, my own physical hardware, which had 99.995% uptime:
 
@@ -319,17 +319,17 @@ And
 
 Yes, synthetic benchmarks aren't perfect, but they also certainly aren't completely meaningless.
 
-Again, make of these numbers what you will. 
+Again, make of these numbers what you will.
 
-### CIFS is still not fast 
+### CIFS is still not fast
 
 Unfortunately, the server came with a 80 GB SSD. That's only about 29,000 3.5" floppy disks! Remember, this server runs Nextcloud which, inherently, requires a lot of storage.
 
-My MacBook uses 1.2/2 **T**B, my Proxmox cluster has something like 50 TB combined capacity (in fairness, lots of redundancy), and even my phone is using ~200GB. 
+My MacBook uses 1.2/2 **T**B, my Proxmox cluster has something like 50 TB combined capacity (in fairness, lots of redundancy), and even my phone is using ~200GB.
 
 I stumbled upon Hetzner's "[StorageBox](https://www.hetzner.com/storage/storage-box/)". Cool concept: Basically what [rsync.net](https://rsync.net/) does, but German. You basically get a dumbed down terminal and a slow, shared disk for very little money at all: **~$4/TB**! Unfortunately, no US locations.
 
-You can access these disks via FTP, SFTP or SCP (aka SSH), WebDAV, various backup tools like `borg` and so on. 
+You can access these disks via FTP, SFTP or SCP (aka SSH), WebDAV, various backup tools like `borg` and so on.
 
 Overall a pretty promising concept, but once you need to attach said disk to a server to make the local storage bigger and usable w/in Nextcloud, your options are somewhat limited and the official [docs](https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/) recommend `samba`/`cifs`. [`sshfs`](https://github.com/libfuse/sshfs) is a valid alternative, the project is in maintenance mode, but I tested it anyways. I suppose conceptually you could make WebDAV work.
 
@@ -347,13 +347,13 @@ SIZE="256M"
 fio --name=job-r --rw=read --size=$SIZE --ioengine=libaio --iodepth=4 --bs=128K --direct=1
 fio --name=job-w --rw=write --size=$SIZE --ioengine=libaio --iodepth=4 --bs=128k --direct=1
 # Random
-fio --name=job-randr --rw=randread --size=$SIZE --ioengine=libaio --iodepth=32 --bs=4K --direct=1 
+fio --name=job-randr --rw=randread --size=$SIZE --ioengine=libaio --iodepth=32 --bs=4K --direct=1
 fio --name=job-randw --rw=randwrite --size=$SIZE --ioengine=libaio --iodepth=32 --bs=4k --direct=1
 ```
 
 Not a new finding either, as I'm not the first to [benchmark](https://blog.ja-ke.tech/2019/08/27/nas-performance-sshfs-nfs-smb.html) this.
 
-In any case, that's pretty slow. The combination of a slow protocol - `cifs` - a slow box, _and_ cross-Atlantic latency didn't make this particularly attractive. 
+In any case, that's pretty slow. The combination of a slow protocol - `cifs` - a slow box, _and_ cross-Atlantic latency didn't make this particularly attractive.
 
 To give you some perspective, here's the same chart with the same benchmark run on a local Proxmox VM:
 
@@ -393,15 +393,15 @@ Seeing this screen for several seconds is normal:
 
 {{< figure src="assets/image-20240825114612035.png" caption="Nextcloud on iOS" attr="by me" attrlink="https://chollinger.com" >}}
 
-In all fairness, this is really only a problem on mobile devices, since I have all my files downloaded on my Mac anyways. 
+In all fairness, this is really only a problem on mobile devices, since I have all my files downloaded on my Mac anyways.
 
 I might still try [rsync.net](https://rsync.net/), which clocks in at $12/mo/TB.
 
-### CrowdSec 
+### CrowdSec
 
 Last but not least, do you remember [`fail2ban`](https://github.com/fail2ban/fail2ban)? You should, because it's still very much an active project that should probably stay the default recommendation for simple intrusion prevention.
 
-But, setting up a new server, I figured it would be worth checking some newer tools, namely [`CrowdSec`](https://github.com/crowdsecurity/crowdsec) (not to be confused with CrowdStrike :-) ) which describes itself as 
+But, setting up a new server, I figured it would be worth checking some newer tools, namely [`CrowdSec`](https://github.com/crowdsecurity/crowdsec) (not to be confused with CrowdStrike :-) ) which describes itself as
 
 > a free, modern & collaborative behavior detection engine, coupled  with a global IP reputation network. It stacks on fail2ban's philosophy but is IPV6 compatible and 60x faster (Go vs Python) (...)
 
