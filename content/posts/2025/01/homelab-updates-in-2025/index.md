@@ -301,9 +301,9 @@ The conventional wisdom online for virtualizing TrueNAS is *not to do it* - just
 > [!NOTE]
 > If you think that's theoretical, you're like me. Despite passing through the HBA, but making small mistakes a long the way, I have been in the "horrible data corruption" world before and sat in my basement until 1am trying to fix my `zfs` pool, followed by a week of restoring backups.
 >
-> Worth noting, however, is this official post: https://www.truenas.com/blog/yes-you-can-virtualize-freenas/
+> Worth noting, however, is this official [blog post](https://www.truenas.com/blog/yes-you-can-virtualize-freenas/).
 >
-> But my milage most certainly varied.
+> But my mileage most certainly varied.
 
 Needless to say, that is impossible on a laptop and barely works (in my experience) with a full-sized server with dedicated PCI-E lanes.
 
