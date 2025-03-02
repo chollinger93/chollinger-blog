@@ -173,9 +173,9 @@ Once this data is added as a layer, we can find basically a copy of the boundary
 
 Layers can also be styled, but we'll leave it as bright yellow for now. Please note that these tend to not live up to surveys, but we'll get to that.
 
-### Switching out the base layer: Georefencing JPEGs and PDFs
+### Switching out the base layer: Georeferencing JPEGs and PDFs
 
-County lines on top of Google Maps is useful, but how about some historical data? No problem, the old aerial photography we've downloaded earlier shall serve as a proxy for a scan of a land survey you will need to get as a prospective buyer (or owner), and these tend to not have any geospatial information attached to them. Being able to map a property survey onto the map is extremely helpful, but really, adding coordinates to any form of non-geotagged image-file is useful. This process is known as "*georefencing*".
+County lines on top of Google Maps is useful, but how about some historical data? No problem, the old aerial photography we've downloaded earlier shall serve as a proxy for a scan of a land survey you will need to get as a prospective buyer (or owner), and these tend to not have any geospatial information attached to them. Being able to map a property survey onto the map is extremely helpful, but really, adding coordinates to any form of non-geotagged image-file is useful. This process is known as "*georeferencing*".
 
 This process works by picking some known coordinates, such as landmarks, county lines, or old roads, and attaching coordinates to them, which then can be used to interpolate the rest of the coordinates on the image. Just make sure that the old thing you pick still exists on a modern map - even county lines can change! The story of [this](https://en.wikipedia.org/wiki/Milton,_Georgia) wealthy Atlanta exurb's county can tell you a [tale](https://en.wikipedia.org/wiki/Milton_County,_Georgia) about that.
 
@@ -189,7 +189,7 @@ And we get a neat overlay, albeit as exact as I promised (due to the inaccurate 
 
 ![image-20230122120725329](docs/image-20230122120725329.png)
 
-Do, however, keep in mind that the county GIS data is almost always inaccurate to a degree. Here's a real screenshot from my property survey (which I georefenced very, very carefully) overlayed with the county's online GIS records:
+Do, however, keep in mind that the county GIS data is almost always inaccurate to a degree. Here's a real screenshot from my property survey (which I georeferenced very, very carefully) overlayed with the county's online GIS records:
 
 ![image-20230124194922533](docs/image-20230124194922533.png)
 
@@ -421,7 +421,7 @@ And I cannot overstate how useful that is - you can *physically* walk the map yo
 
 Nothing in this article is purely academic in nature - I use `QGIS` a *ton*. Even found a [bug](https://github.com/qgis/QGIS/issues/51480) the other day! I've mapped out both my recreational property, as well as our neighborhood, including property surveys, flood plains, easement data, and much more.
 
-I also frequently refer to this data when I'm on said property. While buying mine, one of the first things I did was to georefence the property survey draft as `GeoPDF`, so I could walk boundary lines (again, roughly, not legally speaking :) ) before the surveyors put down the actual survey markers.
+I also frequently refer to this data when I'm on said property. While buying mine, one of the first things I did was to georeference the property survey draft as `GeoPDF`, so I could walk boundary lines (again, roughly, not legally speaking :) ) before the surveyors put down the actual survey markers.
 
 Even better, I basically find new datasets I find interesting on a  weekly basis and play around with `QGIS` to see if I can integrate them. I will admit, not all of this is useful and maybe I should spend my time learning `Rust` instead - yes, light pollution tends to be less then in a big city, I guess I could just look out the window - but it's still absolutely *fascinating*.
 
