@@ -28,9 +28,9 @@ copyright = "© Christian Hollinger"
   wpm = 250
 
   # Stupid footers :)
-  footers = [ 
-    "What Tiger King can teach us about x86 Assembly", 
-    "Running Hadoop on my Thermostat", 
+  footers = [
+    "What Tiger King can teach us about x86 Assembly",
+    "Running Hadoop on my Thermostat",
     "How to google Rust and Go Questions and how to skip DIY Blogs",
     "My Potato Salad Recipe on the Cloud",
     "Serverless, Cloud-Native Cooking Recipes",
@@ -71,6 +71,11 @@ weight = 3
 name = "Tags & Stats"
 url = "/tags"
 weight = 4
+
+[[params.social]]
+name = "Home"
+icon = "home"
+url = "https://chollinger.com"
 
 [[params.social]]
 name = "Github"
