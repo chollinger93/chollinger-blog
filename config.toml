@@ -15,6 +15,11 @@ copyright = "© Christian Hollinger"
   featherIconsCDN = false
   mode = "auto" # "dark" or "auto"
 
+  # Google Analytics alternative
+	enableUmami = true
+	umamiURL = "https://umami.ngrok.pizza/"
+	umamiWebsiteId = "38fbd004-14a4-413a-abe3-5ffa5974843c"
+
   # Enable a table of contents:
 	# Either "static"/true, "floating", "both", or "none" (default: static)
 	# The floating TOC dissapears on mobile and adds 200px vertical space
