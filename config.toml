@@ -17,7 +17,7 @@ copyright = "© Christian Hollinger"
 
   # Google Analytics alternative
 	enableUmami = true
-	umamiURL = "https://umami.ngrok.pizza/"
+	umamiURL = "https://umami.ngrok.pizza/script.js"
 	umamiWebsiteId = "38fbd004-14a4-413a-abe3-5ffa5974843c"
 
   # Enable a table of contents:
