@@ -1246,3 +1246,5 @@ Not having access to "real" tools - `redis`, `etcd` or similar - makes you appre
 {{< figure src="assets/dependency_2x.png" caption="Software, basically" attr="xkcd" attrlink="https://xkcd.com/2347/">}}
 
 In either case - this was very fun. Next time, we'll build out the actual log replication!
+
+_Open graph image credit: Howard, Heidi, Malte Schwarzkopf, Anil Madhavapeddy, and Jon Crowcroft. "[Raft Refloated: Do We Have Consensus?]("https://api.repository.cam.ac.uk/server/api/core/bitstreams/c9bcee5b-a1cb-4147-9281-1a05632f5aa3/content")." *ACM SIGOPS Operating Systems Review* 49, no. 1 (2015): 12-21."_
